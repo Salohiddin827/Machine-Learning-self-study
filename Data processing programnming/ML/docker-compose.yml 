@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  decision-engine:
+    build: .
+    container_name: carbon_decision_engine
+    ports:
+      - "8000:8000"
+    environment:
+      - ENV=dev
+      - REALTIME_API_URL=${REALTIME_API_URL:-}   # set to your realtime API endpoint, e.g. https://myapi.com/live
+      - POLL_INTERVAL=${POLL_INTERVAL:-30}      # in seconds
+      - REALTIME_LOCATION_ID=${REALTIME_LOCATION_ID:-RT-001}
+    volumes:
+      - ./:/app
