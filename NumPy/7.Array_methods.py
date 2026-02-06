@@ -16,3 +16,16 @@ print(np.delete(a,1,0))
 
 #this removes columns
 print(np.delete(a,1,1))
+
+import numpy as np
+
+a = np.array([[1, 2], [3, 4]])
+b = np.array([[5, 6]])
+
+# Concatenate arrays a and b along axis 0
+result = np.concatenate((a, b), axis=0)
+
+print(result)
+
+# Now, try to concatenate a and b along axis 1
+# (Write the code below to complete this part)
